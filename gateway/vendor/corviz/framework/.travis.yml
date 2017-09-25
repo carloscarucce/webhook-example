@@ -1,0 +1,21 @@
+language: php
+
+php:
+  - '7.0'
+  - hhvm
+  - nightly
+
+before_script:
+  - composer self-update
+  - composer install --prefer-source --ignore-platform-reqs
+
+matrix:
+  allow_failures:
+    - php: nightly
+    - php: hhvm
+
+sudo: false
+
+cache:
+  directories:
+    - $HOME/.composer/cache

@@ -1,0 +1,13 @@
+{
+  "name": "corviz/pdo-connector",
+  "description": "A database connector based on PDO",
+  "type": "library",
+  "require": {
+    "corviz/framework": "*@alpha"
+  },
+  "autoload": {
+    "psr-4": {
+      "Corviz\\Connector\\PDO\\": "./src"
+    }
+  }
+}
