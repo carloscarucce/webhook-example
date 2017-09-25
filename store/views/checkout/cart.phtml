@@ -1,0 +1,45 @@
+<?php require __DIR__.'/../common/header.php'; ?>
+
+<h2>Cart</h2>
+
+<table class="table table-stripped">
+    <colgroup>
+        <col style="width: 80%"/>
+        <col style="width: auto"/>
+    </colgroup>
+
+    <thead>
+        <tr>
+            <th>Item</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>Item 1</td>
+            <td>20.00</td>
+        </tr>
+        <tr>
+            <td>Item 2</td>
+            <td>10.00</td>
+        </tr>
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <td>Total</td>
+            <td>30.00</td>
+        </tr>
+    </tfoot>
+</table>
+
+<br/>
+
+<form action="http://localhost/webhook/store/public/checkout/send" method="post">
+    <button class="btn btn-lg btn-primary">
+        Confirm
+    </button>
+</form>
+
+<?php require __DIR__.'/../common/footer.php'; ?>

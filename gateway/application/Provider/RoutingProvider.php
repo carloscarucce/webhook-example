@@ -33,5 +33,15 @@ class RoutingProvider extends Provider
             'action'     => 'index',
             'alias'      => 'home.index',
         ]);
+
+        Route::post('update-status', [
+            'controller' => Controller\Home::class,
+            'action'     => 'updateStatus',
+        ]);
+
+        Route::post('receive', [
+            'controller' => Controller\Home::class,
+            'action'     => 'receive',
+        ]);
     }
 }

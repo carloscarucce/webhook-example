@@ -1,9 +1,44 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Example</title>
-    </head>
-    <body>
-        Hello world
-    </body>
-</html>
+<?php require __DIR__.'/../common/header.php'; ?>
+
+<h2>Payments</h2>
+<table class="table table-stripped">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Value</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php if (!empty($payments)){ ?>
+        <?php foreach($payments as $payment) { ?>
+            <tr>
+                <td><?php echo $payment->id; ?></td>
+                <td><?php echo '$ ', number_format($payment->value, 2); ?></td>
+                <td>
+                    <?php if ($payments->accepted == 0) { ?>
+                        <form method="post" action="update-status">
+                            <input type="hidden" name="payment_id" value="<?php echo $payment->id; ?>"/>
+                            <button type="submit" name="accept" value="1" class="btn btn-success">
+                                Accept
+                            </button>
+
+                            <button type="submit" name="accept" value="2" class="btn btn-danger">
+                                Reject
+                            </button>
+                        </form>
+                    <?php } else { ?>
+                        <?php echo $payments->accepted == 1 ? 'Accepted' : 'Rejected' ?>
+                    <?php } ?>
+                </td>
+            </tr>
+        <?php } ?>
+    <?php } else{ ?>
+        <tr>
+            <td colspan="3">The list is empty</td>
+        </tr>
+    <?php } ?>
+    </tbody>
+</table>
+
+<?php require __DIR__.'/../common/footer.php'; ?>

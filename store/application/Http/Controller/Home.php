@@ -2,6 +2,9 @@
 
 namespace App\Http\Controller;
 
+use Corviz\Http\Response;
+use Corviz\Http\ResponseFactory;
+
 class Home extends AppController
 {
     /**
@@ -9,6 +12,9 @@ class Home extends AppController
      */
     public function index()
     {
-        return $this->view('home/index');
+        $response = new Response();
+        $response->addHeader('location', 'http://localhost/webhook/store/public/checkout/cart/');
+
+        return $response;
     }
 }

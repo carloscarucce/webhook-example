@@ -33,5 +33,38 @@ class RoutingProvider extends Provider
             'action'     => 'index',
             'alias'      => 'home.index',
         ]);
+
+        Route::group('payments', function(){
+
+            Route::get('list', [
+                'controller' => Controller\Payments::class,
+                'action'     => 'paymentsList',
+            ]);
+
+        });
+
+        Route::group('checkout', function(){
+
+            Route::post('accept-payment', [
+                'controller' => Controller\Checkout::class,
+                'action'     => 'acceptPayment',
+            ]);
+
+            Route::get('cart', [
+                'controller' => Controller\Checkout::class,
+                'action'     => 'cart',
+            ]);
+
+            Route::post('send', [
+                'controller' => Controller\Checkout::class,
+                'action'     => 'send',
+            ]);
+
+            Route::get('sent', [
+                'controller' => Controller\Checkout::class,
+                'action'     => 'sent',
+            ]);
+
+        });
     }
 }

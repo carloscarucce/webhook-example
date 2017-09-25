@@ -15,7 +15,7 @@ return [
         //Options may vary according to the current driver.
         //See third party documentation for references.
         'options' => [
-            'dsn' => 'mysql:host=127.0.0.1;dbname=test;charset=utf8',
+            'dsn' => 'mysql:host=127.0.0.1;dbname=webhook;charset=utf8',
             'user' => 'root',
             'password' => '',
             //'afterConnect' => function(\PDO $pdo) {
