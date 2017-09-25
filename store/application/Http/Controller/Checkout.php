@@ -8,6 +8,9 @@ use Corviz\Http\Response;
 
 class Checkout extends AppController
 {
+    /**
+     *
+     */
     public function acceptPayment()
     {
         $data = Request::current()->getData();

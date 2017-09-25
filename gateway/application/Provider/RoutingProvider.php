@@ -29,18 +29,18 @@ class RoutingProvider extends Provider
     public function register()
     {
         Route::get('/', [
-            'controller' => Controller\Home::class,
+            'controller' => Controller\PaymentController::class,
             'action'     => 'index',
             'alias'      => 'home.index',
         ]);
 
         Route::post('update-status', [
-            'controller' => Controller\Home::class,
+            'controller' => Controller\PaymentController::class,
             'action'     => 'updateStatus',
         ]);
 
         Route::post('receive', [
-            'controller' => Controller\Home::class,
+            'controller' => Controller\PaymentController::class,
             'action'     => 'receive',
         ]);
     }

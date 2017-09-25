@@ -8,7 +8,7 @@ use Corviz\Database\Query\WhereClause;
 use Corviz\Http\Request;
 use Corviz\Http\Response;
 
-class Home extends AppController
+class PaymentController extends AppController
 {
     /**
      * Index action handler.
@@ -22,9 +22,12 @@ class Home extends AppController
             $query->bind(0);
         });
 
-        return $this->view('home/index', compact('payments'));
+        return $this->view('payments/list', compact('payments'));
     }
 
+    /**
+     *
+     */
     public function receive()
     {
         $data = Request::current()->getData();
@@ -66,9 +69,11 @@ class Home extends AppController
         $status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
 
+        //region redirect
         $response = new Response();
         $response->addHeader('location', 'http://localhost/webhook/gateway/public/');
 
         return $response;
+        //endregion
     }
 }
