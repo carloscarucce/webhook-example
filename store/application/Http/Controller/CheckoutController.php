@@ -6,7 +6,7 @@ use App\Model\Payment;
 use Corviz\Http\Request;
 use Corviz\Http\Response;
 
-class Checkout extends AppController
+class CheckoutController extends AppController
 {
     /**
      *

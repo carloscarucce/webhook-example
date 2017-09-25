@@ -5,7 +5,7 @@ namespace App\Http\Controller;
 use Corviz\Http\Response;
 use Corviz\Http\ResponseFactory;
 
-class Home extends AppController
+class HomeController extends AppController
 {
     /**
      * Index action handler.

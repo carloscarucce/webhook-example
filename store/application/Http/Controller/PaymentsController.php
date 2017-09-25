@@ -11,7 +11,7 @@ namespace App\Http\Controller;
 
 use App\Model\Payment;
 
-class Payments extends AppController
+class PaymentsController extends AppController
 {
     /**
      * @return \Corviz\Mvc\View

@@ -29,7 +29,7 @@ class RoutingProvider extends Provider
     public function register()
     {
         Route::get('/', [
-            'controller' => Controller\Home::class,
+            'controller' => Controller\HomeController::class,
             'action'     => 'index',
             'alias'      => 'home.index',
         ]);
@@ -37,7 +37,7 @@ class RoutingProvider extends Provider
         Route::group('payments', function(){
 
             Route::get('list', [
-                'controller' => Controller\Payments::class,
+                'controller' => Controller\PaymentsController::class,
                 'action'     => 'paymentsList',
             ]);
 
@@ -46,22 +46,22 @@ class RoutingProvider extends Provider
         Route::group('checkout', function(){
 
             Route::post('accept-payment', [
-                'controller' => Controller\Checkout::class,
+                'controller' => Controller\CheckoutController::class,
                 'action'     => 'acceptPayment',
             ]);
 
             Route::get('cart', [
-                'controller' => Controller\Checkout::class,
+                'controller' => Controller\CheckoutController::class,
                 'action'     => 'cart',
             ]);
 
             Route::post('send', [
-                'controller' => Controller\Checkout::class,
+                'controller' => Controller\CheckoutController::class,
                 'action'     => 'send',
             ]);
 
             Route::get('sent', [
-                'controller' => Controller\Checkout::class,
+                'controller' => Controller\CheckoutController::class,
                 'action'     => 'sent',
             ]);
 
